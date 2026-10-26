@@ -43,7 +43,7 @@ powershell -ExecutionPolicy Bypass -File scripts\setup.ps1
 flutter run -d windows
 ```
 
-`setup.ps1` generates the Windows runner if it is missing, installs packages, then runs `flutter analyze` and `flutter test`. It can be run again to refresh dependencies and repeat the checks without replacing your Dart sources. Run `flutter doctor -v` first if anything complains. You do **not** need the Android SDK for this version. A Windows runner is generated locally and is not included in this source tree, so setup must complete before `flutter run -d windows` or a Windows build will work.
+`setup.ps1` generates the Windows runner if it is missing, applies VidHub window and product branding, installs packages, then runs `flutter analyze` and `flutter test`. It can be run again to refresh dependencies and repeat the checks without replacing your Dart sources. Run `flutter doctor -v` first if anything complains. You do **not** need the Android SDK for this version. A Windows runner is generated locally and is not included in this source tree, so setup must complete before `flutter run -d windows` or a Windows build will work.
 
 Build a release:
 
@@ -88,7 +88,7 @@ One native window plays four roles (hidden, manager, alert card, quick-add). `Wi
 
 ## Where your data lives
 
-`vidhub.json` in the app-support folder (typically `%APPDATA%\dev.vidhub\vidhub`; existing TaskPulse data at `%APPDATA%\dev.taskpulse\taskpulse\taskpulse.json` is still loaded and retained). It's plain JSON, so you can back it up or edit it. If the file ever becomes unreadable it is renamed to `vidhub.json.corrupt-<time>`, never overwritten.
+`vidhub.json` in the app-support folder (typically `%APPDATA%\dev.taskpulse\taskpulse\vidhub.json`; existing data in `taskpulse.json` is copied forward on first launch). It's plain JSON, so you can back it up or edit it. If the file ever becomes unreadable it is renamed to `vidhub.json.corrupt-<time>`, never overwritten.
 
 ## Troubleshooting
 
